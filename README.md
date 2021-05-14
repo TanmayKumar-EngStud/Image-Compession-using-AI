@@ -13,3 +13,9 @@ that Image using this process</p>
 Robot's location (say Robot is on Mars) then Robot can first compress all captured images and compress it in ASCII format using Huffman coding (This takes less 
 amount of time then compared to retrieving back the image) and can send that text file to the Space Research Center, And over there Image can be retrieved beck from
 ASCII format.</p>
+
+
+# You have to follow these following steps :
+1) keep all the images in Test Photos 
+2) change the address of path according to your system
+3) directly give the name of the image while running the folder
