@@ -3,9 +3,9 @@ import math
 import cv2
 import glob
 import os.path as osp
-
-
-test_img_folder = "C:\\Users\\dsnma\\Desktop\\tanmay temporary folder\\AI Project\\Image-Compession-using-AI-main\\Image-Compession-using-AI-main\\results\\*"
+from os import path
+cwd = path.dirname(path.abspath(__file__))
+test_img_folder = cwd + "/pixelated image/*"
 i =0
 for path in glob.glob(test_img_folder):
     i = i+1
@@ -13,4 +13,4 @@ for path in glob.glob(test_img_folder):
     width , height = im.size
     im = im.resize((int(width+200), int(height)), Image.BICUBIC)
     im = im.filter(ImageFilter.SMOOTH_MORE)
-    im.save('C:\\Users\\dsnma\\Desktop\\tanmay temporary folder\\AI Project\\Image-Compession-using-AI-main\\Image-Compession-using-AI-main\\rFinal Result\\Final Image {}.png'.format(i))
+    im.save(cwd+'/Final Image/Image generated {}.png'.format(i))

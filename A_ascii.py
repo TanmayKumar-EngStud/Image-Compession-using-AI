@@ -1,5 +1,5 @@
 from PIL import Image, ImageDraw, ImageFont
-
+import os
 import math
 #QWERTYUIOPASDFGHJKLZXCVBNMqwertyuiopasdfghjklzxcvbnm1234567890!@#$%^&*()-+_={}[]\\/?.,<>;:
 chars = "qwertyuiopasdfghjklzxcvbnm1234567890"[::-1]
@@ -7,8 +7,8 @@ chars = "qwertyuiopasdfghjklzxcvbnm1234567890"[::-1]
 charArray = list(chars)
 charLength = len(charArray)
 interval = charLength/256
-
-
+# Finding current working directory
+cwd = os.getcwd()
 
 oneCharWidth = 11
 oneCharHeight = 18
@@ -16,9 +16,9 @@ oneCharHeight = 18
 def getChar(inputInt):
     return charArray[math.floor(inputInt*interval)]
 
-text_file = open("/home/tanmay/github/ASCII-program/B Text Folder/Output.txt", "w")
+text_file = open(cwd+"/B Text Folder/Output.txt", "w")
 path = input("Enter image name: \n")
-path = "/home/tanmay/github/ASCII-program/Test Photos/"+path
+path = cwd+"/Test Photos/"+path
 im = Image.open(path)
 # H --> 570
 # W --> 570*W/H

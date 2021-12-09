@@ -1,12 +1,12 @@
 import contextlib, sys
 import huffmancoding
-
+from os import path
 
 def main():
-
+	cwd = path.dirname(path.realpath(__file__))
 	
-	inputfile = '/home/tanmay/github/ASCII-program/B Text Folder/Output.txt'
-	outputfile = '/home/tanmay/github/ASCII-program/A Compressed Folder/NewOutput'
+	inputfile =  cwd+ '/B Text Folder/Output.txt'
+	outputfile = cwd + '/A Compressed Folder/NewOutput'
 
 
 	freqs = get_frequencies(inputfile)

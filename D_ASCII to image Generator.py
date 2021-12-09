@@ -1,5 +1,6 @@
 from PIL import ImageDraw, Image
 import math
+from os import path
 #QWERTYUIOPASDFGHJKLZXCVBNMqwertyuiopasdfghjklzxcvbnm1234567890!@#$%^&*()-+_={}[]\\/?.,<>;:
 chars = "qwertyuiopasdfghjklzxcvbnm1234567890"[::-1]
 charArray= list(chars)
@@ -8,8 +9,8 @@ interval = charLen/256
 oneCharWidth = 1
 oneCharHeight = 2
 
-
-path = "/home/tanmay/github/ASCII-program/B Text Folder/Result.txt"
+cwd = path.dirname(path.realpath(__file__))
+path = cwd +"/B Text Folder/Result.txt"
 with open(path, 'r') as value:
     fNew = value.readlines()
 
@@ -31,4 +32,4 @@ for i in range(height-1):
 outputImage= outputImage.resize((int(width*250/height),250), Image.BICUBIC)
 
 
-outputImage.save('/home/tanmay/github/ASCII-program/pixelated image/Generated.png')
+outputImage.save(cwd +'/pixelated image/Generated.png')

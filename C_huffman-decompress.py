@@ -1,11 +1,11 @@
 import sys
 import huffmancoding
-
+from os import path
 
 def main():
-	
-	inputfile = '/home/tanmay/github/ASCII-program/A Compressed Folder/NewOutput'
-	outputfile = '/home/tanmay/github/ASCII-program/B Text Folder/Result.txt'
+	cwd = path.dirname(path.realpath(__file__))
+	inputfile = cwd + '/A Compressed Folder/NewOutput'
+	outputfile = cwd + '/B Text Folder/Result.txt'
 	
 	with open(inputfile, "rb") as inp, open(outputfile, "wb") as out:
 		bitin = huffmancoding.BitInputStream(inp)
